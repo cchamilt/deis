@@ -154,8 +154,8 @@ Vagrant.configure("2") do |config|
 
       # Use the same nameserver as the host machine in order to avoid the "too many redirects" problem.
       config.vm.provider :virtualbox do |vb|
-        vb.customize ["modifyvm", :id, "--natdnshostresolver1", "off"]
-        vb.customize ["modifyvm", :id, "--natdnsproxy1", "off"]
+        vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+        vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
       end
 
       # Uncomment below to enable NFS for sharing the host machine into the coreos-vagrant VM.
